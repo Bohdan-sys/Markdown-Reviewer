@@ -1,0 +1,121 @@
+@import "nullstyle.scss", "media/index.sass", "caption.sass", "columns.sass", "flex.sass"
+
+$space-1: 4px
+$space-2: 10px
+$space-3: 16px
+$space-4: 20px
+$space-5: 28px
+$space-6: 44px
+
+@mixin mask
+    &:hover
+        opacity: 0.7
+        transition: 0.5s
+
+body
+    font-family: 'Raleway', sans-serif
+    line-height: 1.5
+
+.App
+    pisition: relative
+    background: #87b5b5
+    overflow-x: hidden
+    height: 100vh
+//-----top panel styles -----------
+.top-panel
+    width: 100%
+    padding: 4px
+    background-color: #4aa3a3
+    border: 1px solid #1d2f2f
+    box-shadow: 1px 1px 10px 2px #3a5f5f
+
+    .button
+        float: right
+        background-color: transparent
+
+//------------editor---------------
+
+.editor
+    margin: 0px auto
+    max-width: 640px
+    padding: 12px
+    transition: .5s
+    &.is-active
+        max-width: 95%
+
+    &__
+        &text
+            resize: vertical
+            min-height: 208px
+            width: 100%
+            padding: 4px
+            background-color: #c0d8d8
+            border: 1px solid #1d2f2f
+            box-shadow: 1px 1px 10px 2px #3a5f5f
+            border-top: none
+            font-size: 16px
+            &.is-active
+                resize: none
+                height: 100vh !important
+
+//----------------previewer-----------
+.previewer
+
+    margin: 0px auto
+    max-width: 860px
+    padding: 12px
+    transition: .5s
+    &.is-active
+        max-width: 95%
+
+    &__
+        &text
+            font-family: 'Times New Roman', serif
+            @extend .editor__text
+            &.is-active
+                resize: none
+                height: 100vh
+            p
+                margin: 16px 0
+            h1
+                font-size: 32px
+                font-weight: bold
+                border-bottom: 2px solid black
+
+            h2
+                font-size: 24px
+                font-weight: bold
+                border-bottom: 1px solid black
+
+            h3
+                font-size: 18px
+                font-weight: bold
+
+            code, pre
+                background: white
+                padding: 4px
+            blockquote
+                border-left: 3px solid #224b4b
+                color: #224b4b
+                padding-left: 5px
+                margin-left: 25px
+            table
+                border-collapse: collapse
+            td, th
+                border: 2px solid #224b4b
+                padding-left: 5px
+                padding-right: 5px
+            ul, ol
+                padding-left: 40px
+        &text>ul
+            @extend p
+
+//---------icons-----------------
+.icon
+    &-freeCodeCamp
+        margin: 0 4px
+
+    &-arrows
+        margin: 0 4px
+        &:hover
+            color: #44e9e9
